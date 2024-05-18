@@ -1,0 +1,100 @@
+---
+title: "My test ebook"
+author: "Bima Putra Pratama"
+format:
+  html:
+    code-fold: true
+    html-math-method: katex
+    reference-location: margin
+    jupyter: python3
+  pdf:
+    toc: true
+    toc-title: Daftar Isi
+    number-sections: false
+    colorlinks: true
+    documentclass: scrbook
+    papersize: letter
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    highlight-style: github
+    mainfont: Roboto
+    sansfont: Inter
+---
+
+# About
+
+Noto Serif is a versatile font family that covers over 200 languages and scripts. It was created by Google as part of the Noto project, which aims to provide a universal font for all the world’s languages. Noto Serif is based on the classic serif style, with harmonious proportions, high contrast, and elegant details. It is inspired by the typographic traditions of different cultures, such as Latin, Greek, Cyrillic, Devanagari, and Thai. Noto Serif is suitable for various use cases, such as books, magazines, websites, and applications. It is compatible with most platforms and devices, and can be paired with other Noto fonts for a consistent look and feel.
+
+Poppins is a geometric sans-serif font that was inspired by the Devanagari script, which is used in several Indian languages. The font was designed by Ninad Kale and Jonny Pinhorn and released by the Indian Type Foundry in 2014. Poppins has a modern and clean look with rounded shapes and open curves. It supports both Latin and Devanagari scripts and comes in nine weights, from thin to black. Poppins is best used for headlines, logos, posters, and other display purposes where a friendly and versatile style is needed. Poppins is compatible with [Google Fonts](https://connectivewebdesign.com/blog/best-google-font-combinations "Best google font combinations"), Adobe Fonts, and Microsoft Office.
+
+# Learning
+
+Learning a config that I need to master
+
+## Document Class
+
+dcoumentclass options:
+
+-   scrartcl \~ article
+
+-   scrreprt \~ report
+
+-   scrbook \~ book
+
+## Table of Content
+
+```         
+toc: true
+toc-depth: 2
+toc-title: Contents
+```
+
+## Section Numbering
+
+```         
+number-sections: true
+number-depth: 3
+```
+
+## Syntax Highlighting
+
+```         
+highlight-style: github
+```
+
+## Layouting
+
+```         
+title: "My Document"
+format: 
+  pdf: 
+    documentclass: report
+    classoption: [twocolumn, landscape]
+    lof: true
+    lot: true
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    fontfamily: libertinus
+    colorlinks: true
+```
+
+More [pandoc documentation](https://pandoc.org/MANUAL.html#variables-for-latex)
+
+```{sql}
+SELECT *
+FROM data_science
+```
+
+``` sql
+select
+    *
+from data_science
+```
+
+## References
+
+<https://quarto.org/docs/reference/formats/pdf.html>

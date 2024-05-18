@@ -1,0 +1,150 @@
+---
+title: "Quarto Document"
+author: "Bima Putra Pratama"
+format:
+    html:
+        code-fold: true
+        number-sections: true
+        html-math-method: katex
+        reference-location: margin
+        jupyter: python3
+    pdf:
+        toc: true
+        papersize: letter
+        number-sections: true
+        highlight-style: pygments
+    docx: default
+---
+
+# Test
+
+## Placing Colorbars
+
+Colorbars like in indicate the quantitative extent of image data. Placing in a figure is non-trivial because room needs to be made for them. The simplest case is just attaching a colorbar to each axes:[^1].
+
+[^1]: See the [Matplotlib Gallery](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/colorbar_placement.html) to explore colorbars further
+
+```{python}
+#| label: fig-color
+#| fig-cap: "test"
+#| code-fold: true
+#| column: screen-inset
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axs = plt.subplots(2, 2)
+fig.set_size_inches(20, 10)
+cmaps = ['RdBu_r', 'viridis']
+for col in range(2):
+    for row in range(2):
+        ax = axs[row, col]
+        pcm = ax.pcolormesh(
+          np.random.random((20, 20)) * (col + 1),
+          cmap=cmaps[col]
+        )
+        fig.colorbar(pcm, ax=ax)
+plt.show()
+```
+
+::: {.callout-important appearance="simple"}
+## Watch out!
+
+This can be dangerous
+:::
+
+::: {.callout-note appearance="minimal"}
+## Look this
+
+This is also important
+:::
+
+\## Overview
+
+See \@fig-simple in \@sec-plot for a demonstration of a simple plot.
+
+See \@eq-stddev to better understand standard deviation.
+
+## Plot {#sec-plot}
+
+```{python}
+#| label: fig-simple
+#| fig-cap: "Simple Plot"
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+```
+
+## Equation {#sec-equations}
+
+## `Colors`
+
+1.  Red
+2.  Green
+3.  Blue
+
+## Shapes {#color-section}
+
+-   Square
+    -   This should be the `next` level editor
+-   Circle
+-   Triangle
+
+## Textures
+
+![](images/CleanShot%202024-05-18%20at%2010.29.06.png)
+
+-   Smooth
+-   Bumpy
+-   Fuzzy
+
+# Header 1
+
+## Header 2
+
+This table need to be look after
+
+| Test | With | Book |
+|------|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |
+
+### Header 3
+
+#### Header 4
+
+::: callout-note
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+::: callout-tip
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+::: callout-warning
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+This is a **bold**, *italic*, and ***both***
+
+This is a complete paragraph in a text. This can be used to check how the spacing in a line. This is a new line
+
+Einstein's theory of special relatively that expresses the equivalence of mass and energy:
+
+$E = mc^{2}$
+
+This is a new line with an empty line before\
+- Test\
+- another test\
+- Can we do this\
+- not sure\
+- let's try
+
+> \[!NOTE\] Test Testing Callout
+
+> \[!WARNING\] Test Warning Contents
+
+| Test | Column | Name   |     |
+|------|--------|--------|-----|
+| This | Is     | Table  |     |
+| As   | A      | Sample |     |
